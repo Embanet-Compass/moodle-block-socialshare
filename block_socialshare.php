@@ -43,6 +43,7 @@ class block_socialshare extends block_base {
         $enabletwitter = false;
         $enablegoogleplus = false;
         $enablestumbleupon = false;
+        $enablelinkedin = false;
 
         if (!empty($this->config->enablefacebook)) {
             $enablefacebook = $this->config->enablefacebook;
@@ -56,6 +57,9 @@ class block_socialshare extends block_base {
         if (!empty($this->config->enablestumbleupon)) {
             $enablestumbleupon = $this->config->enablestumbleupon;
         }
+        if (!empty($this->config->enablelinkedin)) {
+            $enablelinkedin = $this->config->enablelinkedin;
+        }
 
         if ($this->content != null) {
             return $this->content;
@@ -63,7 +67,7 @@ class block_socialshare extends block_base {
 
         $url = $this->get_url();
 
-        if ((!$enablefacebook) && (!$enabletwitter) && (!$enablegoogleplus) && (!$enablestumbleupon)) {
+        if ((!$enablefacebook) && (!$enabletwitter) && (!$enablegoogleplus) && (!$enablestumbleupon) && (!$enablelinkedin)) {
             $this->content = null;
             return '';
         }
@@ -83,12 +87,16 @@ class block_socialshare extends block_base {
         if ($enablestumbleupon) {
             $stumbleuponshare = $this->get_stumbleupon_share($url);
         }
+        if ($enablelinkedin) {
+        	$linkedinshare = $this->get_linkedin_share($url);
+        }
 
         $this->content->text = '<ul class="vertical"><li id="facebook-like">'.
                                 $facebooklike.'</li><li id="twitter-share">'.
                                 $twittershare.'</li><li id="googleplus-share">'.
                                 $googleplusshare.'</li><li id="stumbleupon-share">'.
-                                $stumbleuponshare.'</li></ul>';
+                                $stumbleuponshare.'</li><li id="linkedin-share">'.
+                                $linkedinshare.'</li></ul>';
     }
 
     /**
@@ -181,6 +189,17 @@ class block_socialshare extends block_base {
      */
     private function get_stumbleupon_share($url) {
         return '<su:badge layout="2" location="'.$url.'"></su:badge>';
+    }
+    
+    /**
+     * Generates html for linkedin button
+     *
+     * @param $url
+     * @return string
+     */
+    private function get_linkedin_share($url) {
+    	return '<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+				<script type="IN/Share" data-url="'.$url.'"></script>';
     }
 
     /**
