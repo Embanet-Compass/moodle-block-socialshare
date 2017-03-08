@@ -31,6 +31,7 @@ $string['enablefacebook'] = 'Allow Facebook sharing';
 $string['enabletwitter'] = 'Allow Twitter sharing';
 $string['enablegoogleplus'] = 'Allow Google+ sharing';
 $string['enablestumbleupon'] = 'Allow StumbleUpon sharing';
+$string['enablelinkedin'] = 'Allow Linkedin sharing';
 
 $string['layout_horizontal'] = 'Horizontal';
 $string['layout_vertical'] = 'Vertical';
