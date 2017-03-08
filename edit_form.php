@@ -44,10 +44,6 @@ class block_socialshare_edit_form extends block_edit_form {
         $mform->addElement('advcheckbox', 'config_enablegoogleplus', get_string('enablegoogleplus', 'block_socialshare'));
         $mform->setDefault('config_enablegoogleplus', true);
         $mform->setType('config_enablegoogleplus', PARAM_BOOL);
-
-        $mform->addElement('advcheckbox', 'config_enablestumbleupon', get_string('enablestumbleupon', 'block_socialshare'));
-        $mform->setDefault('config_enablestumbleupon', true);
-        $mform->setType('config_enablestumbleupon', PARAM_BOOL);
         
         $mform->addElement('advcheckbox', 'config_enablelinkedin', get_string('enablelinkedin', 'block_socialshare'));
         $mform->setDefault('config_enablelinkedin', true);
