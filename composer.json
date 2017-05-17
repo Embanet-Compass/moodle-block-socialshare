@@ -1,5 +1,5 @@
 {
-  "name": "embanet-compass/moodle-block_socialshare",
+  "name": "embanet-compass/moodle-block-socialshare",
   "type": "moodle-block",
   "description": "Social Share",
   "extra": {
