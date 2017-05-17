@@ -1,0 +1,9 @@
+{
+  "name": "embanet-compass/moodle-block_socialshare",
+  "type": "moodle-block",
+  "description": "Social Share",
+  "extra": {
+    "installer-name": "socialshare",
+    "moodle": { "package_folder_name" : "socialshare" }
+  }
+}
